@@ -4,25 +4,60 @@
   <meta charset="utf-8">
   <title>Flor Amarilla</title>
   <style>
-    body {margin:0;display:flex;justify-content:center;align-items:center;height:100vh;background:#fff8e6;font-family:sans-serif;}
-    .contenedor {text-align:center;}
-    svg {width:300px;height:auto;}
-    .trazo {fill:transparent;stroke:#FFD700;stroke-width:6;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:1000;stroke-dashoffset:1000;animation:dibujar 2s forwards;}
-    .mensaje {margin-top:20px;font-size:24px;font-weight:bold;color:#444;opacity:0;animation:aparecer 1s forwards 2.2s;}
-    @keyframes dibujar {to {stroke-dashoffset:0;}}
-    @keyframes aparecer {to {opacity:1;}}
+    body {
+      margin: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background: #fff8e6;
+      font-family: sans-serif;
+    }
+    .contenedor { text-align: center; }
+    svg { width: 200px; height: auto; }
+
+    /* Animación simple */
+    .trazo {
+      fill: transparent;
+      stroke: #FFD700;
+      stroke-width: 6;
+      stroke-dasharray: 1000;
+      stroke-dashoffset: 1000;
+      animation: dibujar 2s forwards;
+    }
+    .centro {
+      fill: #FFD700;
+      opacity: 0;
+      animation: aparecer 1s forwards 2.2s;
+    }
+
+    .mensaje {
+      margin-top: 20px;
+      font-size: 26px;
+      font-weight: bold;
+      color: #444;
+      opacity: 0;
+      animation: aparecer 1s forwards 2.5s;
+    }
+
+    @keyframes dibujar { to { stroke-dashoffset: 0; } }
+    @keyframes aparecer { to { opacity: 1; } }
   </style>
 </head>
 <body>
   <div class="contenedor">
     <svg viewBox="0 0 400 400">
-      <path class="trazo" d="M200 220 C200 240 200 300 200 360" />
-      <path class="trazo" d="M200 270 C170 260 150 240 180 230" />
-      <path class="trazo" d="M200 140 C230 115 270 115 300 140 C270 160 230 160 200 140" />
-      <path class="trazo" d="M260 150 C287 180 287 230 260 260 C235 230 235 180 260 150" />
-      <path class="trazo" d="M200 160 C170 140 120 140 100 170 C130 185 170 185 200 160" />
-      <path class="trazo" d="M140 150 C110 180 110 230 140 260 C165 230 165 180 140 150" />
-      <circle class="trazo" cx="200" cy="160" r="24" />
+      <!-- Tallo -->
+      <path class="trazo" d="M200 220 C200 260 200 300 200 360" />
+      <!-- Hoja -->
+      <path class="trazo" d="M200 270 C150 250 130 220 170 210" />
+
+      <!-- Pétalos principales -->
+      <circle class="trazo" cx="200" cy="160" r="60" />
+      <circle class="trazo" cx="200" cy="160" r="60" transform="rotate(45 200 160)" />
+
+      <!-- Centro -->
+      <circle class="centro" cx="200" cy="160" r="28" />
     </svg>
     <div class="mensaje">te quiero mucho <span style="color:#FFD700">muchito</span> 💛</div>
   </div>
