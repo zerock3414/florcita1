@@ -1,76 +1,39 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="utf-8">
-  <title>Flor Amarilla</title>
+  <meta charset="UTF-8">
+  <title>Te quiero muchito</title>
   <style>
     body {
       margin: 0;
+      height: 100vh;
       display: flex;
+      flex-direction: column;
       justify-content: center;
       align-items: center;
-      height: 100vh;
-      background: #fff8e6;
-      font-family: sans-serif;
+      background: linear-gradient(to top right, #fffde7, #fff9c4);
+      font-family: "Comic Sans MS", cursive, sans-serif;
     }
-    .contenedor { text-align: center; }
-    svg { width: 220px; height: auto; }
-
-    .petalo {
-      fill: #FFD700;
-      stroke: #e6b800;
-      stroke-width: 2;
-    }
-    .centro {
-      fill: orange;
-      stroke: #b36b00;
-      stroke-width: 2;
-    }
-    .tallo {
-      fill: none;
-      stroke: green;
-      stroke-width: 6;
-    }
-    .hoja {
-      fill: green;
-      stroke: darkgreen;
-      stroke-width: 2;
-    }
-
-    .mensaje {
-      margin-top: 20px;
-      font-size: 28px;
-      font-weight: bold;
-      color: #444;
+    img {
+      width: 250px;
+      animation: aparecer 2s ease-in-out forwards;
       opacity: 0;
-      animation: aparecer 1s forwards 0.5s;
     }
-
-    @keyframes aparecer { to { opacity: 1; } }
+    h1 {
+      margin-top: 20px;
+      font-size: 2em;
+      color: #ff9800;
+      opacity: 0;
+      animation: aparecer 2s ease-in-out forwards;
+      animation-delay: 2s;
+    }
+    @keyframes aparecer {
+      to { opacity: 1; }
+    }
   </style>
 </head>
 <body>
-  <div class="contenedor">
-    <svg viewBox="0 0 400 400">
-      <!-- Tallo -->
-      <path class="tallo" d="M200 220 C200 260 200 300 200 360" />
-      <!-- Hoja -->
-      <ellipse class="hoja" cx="170" cy="280" rx="40" ry="20" />
-
-      <!-- Pétalos alrededor -->
-      <circle class="petalo" cx="200" cy="100" r="40" />
-      <circle class="petalo" cx="260" cy="130" r="40" />
-      <circle class="petalo" cx="280" cy="190" r="40" />
-      <circle class="petalo" cx="260" cy="250" r="40" />
-      <circle class="petalo" cx="200" cy="280" r="40" />
-      <circle class="petalo" cx="140" cy="250" r="40" />
-      <circle class="petalo" cx="120" cy="190" r="40" />
-      <circle class="petalo" cx="140" cy="130" r="40" />
-
-      <!-- Centro -->
-      <circle class="centro" cx="200" cy="190" r="45" />
-    </svg>
-    <div class="mensaje">te quiero <span style="color:#FFD700">muchito</span> 💛</div>
-  </div>
+  <img src="flor.png" alt="Flor amarilla">
+  <h1>Te quiero muchito 💛</h1>
 </body>
 </html>
