@@ -14,33 +14,38 @@
       font-family: sans-serif;
     }
     .contenedor { text-align: center; }
-    svg { width: 200px; height: auto; }
+    svg { width: 220px; height: auto; }
 
-    /* Animación simple */
-    .trazo {
-      fill: transparent;
-      stroke: #FFD700;
-      stroke-width: 6;
-      stroke-dasharray: 1000;
-      stroke-dashoffset: 1000;
-      animation: dibujar 2s forwards;
+    .petalo {
+      fill: #FFD700;
+      stroke: #e6b800;
+      stroke-width: 2;
     }
     .centro {
-      fill: #FFD700;
-      opacity: 0;
-      animation: aparecer 1s forwards 2.2s;
+      fill: orange;
+      stroke: #b36b00;
+      stroke-width: 2;
+    }
+    .tallo {
+      fill: none;
+      stroke: green;
+      stroke-width: 6;
+    }
+    .hoja {
+      fill: green;
+      stroke: darkgreen;
+      stroke-width: 2;
     }
 
     .mensaje {
       margin-top: 20px;
-      font-size: 26px;
+      font-size: 28px;
       font-weight: bold;
       color: #444;
       opacity: 0;
-      animation: aparecer 1s forwards 2.5s;
+      animation: aparecer 1s forwards 0.5s;
     }
 
-    @keyframes dibujar { to { stroke-dashoffset: 0; } }
     @keyframes aparecer { to { opacity: 1; } }
   </style>
 </head>
@@ -48,18 +53,24 @@
   <div class="contenedor">
     <svg viewBox="0 0 400 400">
       <!-- Tallo -->
-      <path class="trazo" d="M200 220 C200 260 200 300 200 360" />
+      <path class="tallo" d="M200 220 C200 260 200 300 200 360" />
       <!-- Hoja -->
-      <path class="trazo" d="M200 270 C150 250 130 220 170 210" />
+      <ellipse class="hoja" cx="170" cy="280" rx="40" ry="20" />
 
-      <!-- Pétalos principales -->
-      <circle class="trazo" cx="200" cy="160" r="60" />
-      <circle class="trazo" cx="200" cy="160" r="60" transform="rotate(45 200 160)" />
+      <!-- Pétalos alrededor -->
+      <circle class="petalo" cx="200" cy="100" r="40" />
+      <circle class="petalo" cx="260" cy="130" r="40" />
+      <circle class="petalo" cx="280" cy="190" r="40" />
+      <circle class="petalo" cx="260" cy="250" r="40" />
+      <circle class="petalo" cx="200" cy="280" r="40" />
+      <circle class="petalo" cx="140" cy="250" r="40" />
+      <circle class="petalo" cx="120" cy="190" r="40" />
+      <circle class="petalo" cx="140" cy="130" r="40" />
 
       <!-- Centro -->
-      <circle class="centro" cx="200" cy="160" r="28" />
+      <circle class="centro" cx="200" cy="190" r="45" />
     </svg>
-    <div class="mensaje">te quiero mucho <span style="color:#FFD700">muchito</span> 💛</div>
+    <div class="mensaje">te quiero <span style="color:#FFD700">muchito</span> 💛</div>
   </div>
 </body>
 </html>
